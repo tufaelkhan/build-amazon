@@ -17,7 +17,7 @@ const Product = (props) => {
             <p>Rating: {ratings} Stars: </p>
             </div>
 
-            <button className='btn-cart' onClick={()=>hadleAddCart()}>Add to Cart:<FontAwesomeIcon icon={faShoppingCart} />
+            <button className='btn-cart' onClick={()=>hadleAddCart(props.product)}>Add to Cart:<FontAwesomeIcon icon={faShoppingCart} />
              </button>
         </div>
     );
