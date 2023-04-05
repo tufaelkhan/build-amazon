@@ -8,3 +8,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
 }
+.review-item{
+    width: 570px;
+    border: 1px salmon;
+    border-radius: 8px;
+}
