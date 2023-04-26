@@ -13,3 +13,18 @@
     border: 1px salmon;
     border-radius: 8px;
 }
+.proced-link{
+    text-decoration: none;
+}
+.btn-proced{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px auto;
+    border-radius: 10px;
+    background: #FF9900;
+    color: #fff;
+    font-size: 21px;
+    height: 40px;
+}

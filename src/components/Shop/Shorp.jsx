@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 import Card from '../Card/Card';
 import Product from '../Product/Product';
 import './Shop.css'
+import { Link } from 'react-router-dom';
 const Shorp = () => {
     const [products, setProducts] = useState([])
     const [cart, setCart]= useState([])
@@ -52,6 +53,11 @@ const Shorp = () => {
         setCart(newCart)
         addToDb(product.id)
     }
+
+    const handleClearCart =() =>{
+        setCart([])
+        deleteShoppingCart()
+    }
     return (
         <div className='shop-container'>
             <div className="products-container">
@@ -60,11 +66,19 @@ const Shorp = () => {
                     key={product.id}
                     product={product}
                     hadleAddCart={hadleAddCart}
+
                     ></Product>)
                 }
             </div>
             <div className="cart-container">
-                <Card cart={cart}></Card>
+                <Card
+                 cart={cart}
+                 handleClearCart={handleClearCart}
+                 >
+                    <Link className='proced-link' to="/orders">
+                        <button className='btn-proced'>Review Order</button>
+                    </Link>
+                 </Card>
             </div>
         </div>
     );
